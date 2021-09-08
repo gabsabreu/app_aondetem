@@ -8,57 +8,26 @@ class AondeTem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aonde Tem?',
-      theme: ThemeData(
-        primaryColor: Colors.pink[300],
-      ),
-      home: MyHomePage(title: 'Aonde Tem?'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Dashboard'),
+        ),
+        body: Column(
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('images/aondetem_logo.png'),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            Container(
+              height: 120,
+              width: 100,
+              color: Colors.pinkAccent,
+              child: Column(
+                children: <Widget>[Icon(Icons.people), Text('Contacts')],
+              ),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
