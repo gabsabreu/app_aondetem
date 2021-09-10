@@ -2,6 +2,7 @@
 import 'package:aondetem/screens/contact_form.dart';
 import 'package:aondetem/screens/contacts_list.dart';
 import 'package:aondetem/screens/dashboard.dart';
+import 'package:aondetem/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class AondeTem extends StatelessWidget {
             buttonColor: Colors.pinkAccent,
             textTheme: ButtonTextTheme.primary,
           )),
-      home: Dashboard(),
+      home: MyApp(),
     );
   }
 }
