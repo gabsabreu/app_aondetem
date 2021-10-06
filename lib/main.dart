@@ -20,7 +20,7 @@ class AondeTem extends StatelessWidget {
             buttonColor: Colors.pinkAccent,
             textTheme: ButtonTextTheme.primary,
           )),
-      home: MyApp(),
+      home: Dashboard(),
     );
   }
 }

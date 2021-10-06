@@ -1,14 +1,22 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-void createDatabase() {
-  getDatabasesPath().then((dbPath) {
+Future<Database> createDatabase() {
+  return getDatabasesPath().then((dbPath) {
     final String path = join(dbPath, 'aondetem.db');
-    openDatabase(path, onCreate: (db, version) {
+    return openDatabase(path, onCreate: (db, version) {
       db.execute('CREATE TABLE contacts('
           'id INTEGER PRIMARY KEY, '
           'name TEXT, '
           'account_number INTEGER)');
     }, version: 1);
+  });
+}
+
+void save(Contact contact) {
+  createDatabase().then((db) {
+    final Map<String, dynamic> contactMap = Map();
+    contactMap['id'] = contact.id;
+    db.insert('contacts', values);
   });
 }
